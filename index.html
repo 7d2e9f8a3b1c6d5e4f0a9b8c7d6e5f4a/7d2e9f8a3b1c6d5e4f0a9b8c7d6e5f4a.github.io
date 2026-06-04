@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Portfolio | Software & Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <span class="badge-status">Available for Projects</span>
+            <h1>Technical Portfolio</h1>
+            <p class="subtitle">Systems Programming | Linux Environments | Hardware Architecture</p>
+
+            <nav class="tab-navigation">
+                <button class="nav-btn active" onclick="switchTab('profile')">Profile</button>
+                <button class="nav-btn" onclick="switchTab('skills')">Skills</button>
+                <button class="nav-btn" onclick="switchTab('timeline')">Timeline</button>
+                <button class="nav-btn" onclick="switchTab('projects')">Projects</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="profile" class="tab-content active">
+            <h2>Professional Profile</h2>
+            <p>Driven technology enthusiast with a multi-year background in hands-on hardware engineering, systems
+                optimization, and script development. Experienced in configuring optimized Linux environments
+                (CachyOS/Arch), version control via Git, and currently specializing in low-level systems programming in
+                C and automation utilizing Python.</p>
+        </section>
+
+        <section id="skills" class="tab-content">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Frameworks</h3>
+                    <p>C, Python, JavaScript (Fundamentals)</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Environments</h3>
+                    <p>Git, VS Code, Linux CLI, Arch/CachyOS</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Hardware & Systems</h3>
+                    <p>PC Architecture, Custom System Design, Optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="tab-content">
+            <h2>Development Timeline & Experience</h2>
+            <div class="timeline-container">
+
+                <div class="timeline-item">
+                    <div class="time-header">
+                        <span class="time-badge">Initial Milestones</span>
+                        <h3>Foundational Hardware & Logic Exploration</h3>
+                    </div>
+                    <p>Began early technical development by exploring desktop operating systems and hardware
+                        configurations. Progressed into software logic by writing foundational scripts using Python
+                        variables and basic loops.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-header">
+                        <span class="time-badge">Systems & Modding</span>
+                        <h3>Logic Manipulation & Scripting</h3>
+                    </div>
+                    <p>Returned to software development to study execution flow. Experimented with sandbox environments
+                        and light script modifications to understand runtime logic and external code integration.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-header">
+                        <span class="time-badge">Security Response</span>
+                        <h3>Incident Mitigation & Account Security</h3>
+                    </div>
+                    <p>Successfully identified and mitigated a persistent, multi-hour unauthorized access attempt on a
+                        primary credentialed account. Analyzed basic attack vectors and implemented multi-factor
+                        authentication (MFA) and session termination to secure the asset.</p>
+                </div>
+
+                <div class="timeline-item current">
+                    <div class="time-header">
+                        <span class="time-badge">Current Focus</span>
+                        <h3>Systems Programming & Performance Environments</h3>
+                    </div>
+                    <p>Deploying software stacks inside performance-optimized Linux distributions (CachyOS). Actively
+                        mastering low-level memory allocation, pointers, and compilation structures in C, alongside
+                        automation workflows in Python and strict Git version control.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="projects" class="tab-content">
+            <h2>Project Directory</h2>
+            <div class="projects-grid">
+                <div class="project-card pending">
+                    <h3>System Tools & Repositories</h3>
+                    <p>Active code repositories and compiled C binaries will be cataloged here as development
+                        progresses.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 | Technical Portfolio maintained via GitHub Pages</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show target tab content and activate corresponding button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
