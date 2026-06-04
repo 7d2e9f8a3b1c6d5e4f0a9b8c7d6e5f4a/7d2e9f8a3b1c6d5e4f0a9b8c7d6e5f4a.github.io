@@ -1,4 +1,247 @@
-/* Executive Dark Developer Theme */
+:root {
+    --bg-space: #060913;
+    --glass-bg: rgba(10, 18, 36, 0.45);
+    --glass-border: rgba(0, 242, 254, 0.15);
+    --neon-cyan: #00f2fe;
+    --neon-blue: #4facfe;
+    --text-glow: #ffffff;
+    --text-dim: #7f8c8d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: var(--bg-space);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 242, 254, 0.08) 0px, transparent 50%);
+    height: 100vh;
+    color: #e0e6ed;
+    overflow: hidden;
+}
+
+/* Security Lock Screen Modifications */
+#security-gateway {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-space);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gateway-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.cyber-scanner {
+    width: 100%;
+    height: 2px;
+    background: var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    animation: scan 3s infinite ease-in-out;
+    margin-bottom: 20px;
+}
+
+#access-pin {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    color: #fff;
+    border-radius: 4px;
+    flex: 1;
+    letter-spacing: 2px;
+}
+
+.gateway-card button {
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-cyan));
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Core Main Frame Layout */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* The Sidebar Style */
+.sidebar {
+    width: 300px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-right: 1px solid var(--glass-border);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-node {
+    width: 8px;
+    height: 8px;
+    background-color: var(--neon-cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.core-title {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--neon-cyan);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-item {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-dim);
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-item:hover, .nav-item.active {
+    background: rgba(0, 242, 254, 0.05);
+    border-color: var(--glass-border);
+    color: #fff;
+    text-shadow: 0 0 5px var(--text-glow);
+    box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.1);
+}
+
+.nav-idx {
+    color: var(--neon-blue);
+}
+
+.sidebar-footer {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+/* Display Workspace */
+.display-panel {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 800px;
+    min-height: 400px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-card h2 {
+    color: var(--neon-cyan);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.glass-card p {
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+/* Grid & Timeline Utilities */
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.matrix-box {
+    background: rgba(0,0,0,0.2);
+    border-left: 3px solid var(--neon-blue);
+    padding: 15px;
+}
+
+.matrix-box h3 { margin-bottom: 5px; font-size: 1rem; color: #fff;}
+
+.log-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.log-entry {
+    padding-left: 15px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.active-log {
+    border-left-color: var(--neon-cyan);
+}
+
+.log-timestamp {
+    color: var(--neon-blue);
+    font-size: 0.8rem;
+}
+
+/* Logic Visibility Controls */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.content-hidden { display: none; }
+.error-hidden { display: none; }
+.error-visible { color: #ff3838; margin-top: 15px; font-size: 0.85rem;}
+
+/* Animations */
+@keyframes scan {
+    0%, 100% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(180px); opacity: 1; }
+}/* Executive Dark Developer Theme */
 :root {
     --bg-main: #090d16;
     --bg-surface: #131c2e;
