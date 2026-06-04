@@ -1,136 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Portfolio | Software & Systems</title>
+    <title>7d2e9f8a3b1c6d5e4f0a9b8c7d6e5f4a</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <div class="container">
-            <span class="badge-status">Available for Projects</span>
-            <h1>Technical Portfolio</h1>
-            <p class="subtitle">Systems Programming | Linux Environments | Hardware Architecture</p>
-
-            <nav class="tab-navigation">
-                <button class="nav-btn active" onclick="switchTab('profile')">Profile</button>
-                <button class="nav-btn" onclick="switchTab('skills')">Skills</button>
-                <button class="nav-btn" onclick="switchTab('timeline')">Timeline</button>
-                <button class="nav-btn" onclick="switchTab('projects')">Projects</button>
-            </nav>
+    <div id="security-gateway">
+        <div class="gateway-card">
+            <div class="cyber-scanner"></div>
+            <span class="lock-icon">🔒</span>
+            <h2>SYSTEM LOCKED</h2>
+            <p>Input authorization token to initialize environment.</p>
+            <div class="input-group">
+                <input type="password" id="access-pin" placeholder="ENTER ACCESS CODE" onkeydown="if(event.key === 'Enter') verifyAccess()">
+                <button onclick="verifyAccess()">AUTHENTICATE</button>
+            </div>
+            <p id="error-msg" class="error-hidden">ACCESS DENIED: INVALID TOKEN</p>
         </div>
-    </header>
+    </div>
 
-    <main class="container">
-
-        <section id="profile" class="tab-content active">
-            <h2>Professional Profile</h2>
-            <p>Driven technology enthusiast with a multi-year background in hands-on hardware engineering, systems
-                optimization, and script development. Experienced in configuring optimized Linux environments
-                (CachyOS/Arch), version control via Git, and currently specializing in low-level systems programming in
-                C and automation utilizing Python.</p>
-        </section>
-
-        <section id="skills" class="tab-content">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages & Frameworks</h3>
-                    <p>C, Python, JavaScript (Fundamentals)</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Environments</h3>
-                    <p>Git, VS Code, Linux CLI, Arch/CachyOS</p>
-                </div>
-                <div class="skill-category">
-                    <h3>Hardware & Systems</h3>
-                    <p>PC Architecture, Custom System Design, Optimization</p>
-                </div>
+    <div id="portfolio-content" class="dashboard-container content-hidden">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="status-node"></div>
+                <span class="core-title">CORE_OS // ALEX</span>
             </div>
-        </section>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('profile')">
+                    <span class="nav-idx">01</span> OVERVIEW
+                </button>
+                <button class="nav-item" onclick="switchTab('skills')">
+                    <span class="nav-idx">02</span> MATRIX_SKILLS
+                </button>
+                <button class="nav-item" onclick="switchTab('timeline')">
+                    <span class="nav-idx">03</span> LOG_TIMELINE
+                </button>
+                <button class="nav-item" onclick="switchTab('projects')">
+                    <span class="nav-idx">04</span> REPOSITORIES
+                </button>
+            </nav>
 
-        <section id="timeline" class="tab-content">
-            <h2>Development Timeline & Experience</h2>
-            <div class="timeline-container">
-
-                <div class="timeline-item">
-                    <div class="time-header">
-                        <span class="time-badge">Initial Milestones</span>
-                        <h3>Foundational Hardware & Logic Exploration</h3>
-                    </div>
-                    <p>Began early technical development by exploring desktop operating systems and hardware
-                        configurations. Progressed into software logic by writing foundational scripts using Python
-                        variables and basic loops.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="time-header">
-                        <span class="time-badge">Systems & Modding</span>
-                        <h3>Logic Manipulation & Scripting</h3>
-                    </div>
-                    <p>Returned to software development to study execution flow. Experimented with sandbox environments
-                        and light script modifications to understand runtime logic and external code integration.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="time-header">
-                        <span class="time-badge">Security Response</span>
-                        <h3>Incident Mitigation & Account Security</h3>
-                    </div>
-                    <p>Successfully identified and mitigated a persistent, multi-hour unauthorized access attempt on a
-                        primary credentialed account. Analyzed basic attack vectors and implemented multi-factor
-                        authentication (MFA) and session termination to secure the asset.</p>
-                </div>
-
-                <div class="timeline-item current">
-                    <div class="time-header">
-                        <span class="time-badge">Current Focus</span>
-                        <h3>Systems Programming & Performance Environments</h3>
-                    </div>
-                    <p>Deploying software stacks inside performance-optimized Linux distributions (CachyOS). Actively
-                        mastering low-level memory allocation, pointers, and compilation structures in C, alongside
-                        automation workflows in Python and strict Git version control.</p>
-                </div>
-
+            <div class="sidebar-footer">
+                <p>STATUS: AUTHORIZED</p>
+                <p class="crypto-string">SYS_REV: 2026.4</p>
             </div>
-        </section>
+        </aside>
 
-        <section id="projects" class="tab-content">
-            <h2>Project Directory</h2>
-            <div class="projects-grid">
-                <div class="project-card pending">
-                    <h3>System Tools & Repositories</h3>
-                    <p>Active code repositories and compiled C binaries will be cataloged here as development
-                        progresses.</p>
+        <main class="display-panel">
+            <section id="profile" class="tab-content active">
+                <div class="glass-card animate-glow">
+                    <h2>// PROFESSIONAL PROFILE</h2>
+                    <p>Driven technology enthusiast with a multi-year background in hands-on hardware engineering, systems optimization, and script development. Experienced in configuring optimized Linux environments (CachyOS/Arch), version control via Git, and currently specializing in low-level systems programming in C and automation utilizing Python.</p>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer>
-        <p>&copy; 2026 | Technical Portfolio maintained via GitHub Pages</p>
-    </footer>
+            <section id="skills" class="tab-content">
+                <div class="glass-card">
+                    <h2>// TECHNICAL MATRIX</h2>
+                    <div class="matrix-grid">
+                        <div class="matrix-box">
+                            <h3>LANGUAGES</h3>
+                            <p>C, Python, JavaScript, Bash</p>
+                        </div>
+                        <div class="matrix-box">
+                            <h3>ENVIRONMENTS</h3>
+                            <p>Linux CLI, Arch Architecture, CachyOS Kernel, Git</p>
+                        </div>
+                        <div class="matrix-box">
+                            <h3>SYSTEMS</h3>
+                            <p>Hardware Logic, Core Optimization, Storage Layouts</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timeline" class="tab-content">
+                <div class="glass-card">
+                    <h2>// LOG_TIMELINE</h2>
+                    <div class="log-stream">
+                        <div class="log-entry">
+                            <span class="log-timestamp">[2023-2024]</span>
+                            <h4>Hardware & Logic Exploration</h4>
+                            <p>Explored desktop operating systems and hardware configurations. Progressed into software logic by writing foundational scripts using Python variables and basic loops.</p>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-timestamp">[2024-2025]</span>
+                            <h4>Logic Manipulation & Scripting</h4>
+                            <p>Returned to software development to study execution flow. Experimented with sandbox environments and light script modifications to understand runtime logic.</p>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-timestamp">[2025]</span>
+                            <h4>Security Response & Mitigation</h4>
+                            <p>Successfully identified and mitigated a persistent, multi-hour unauthorized access attempt on a primary credentialed asset. Implemented multi-factor authentication (MFA) and session termination to secure the asset.</p>
+                        </div>
+                        <div class="log-entry active-log">
+                            <span class="log-timestamp">[CURRENT_PHASE]</span>
+                            <h4>Systems Programming & Performance Environments</h4>
+                            <p>Deploying software stacks inside performance-optimized Linux distributions (CachyOS). Actively mastering low-level memory allocation, pointers, and compilation structures in C.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="tab-content">
+                <div class="glass-card">
+                    <h2>// REPOSITORY DIRECTORY</h2>
+                    <div class="project-vault">
+                        <div class="vault-lock">
+                            <p>Active repositories and compiled C binaries will register here upon code deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
+        const SECRET_PIN = "AlexTech2026"; 
+
+        // Initialize Web Audio API Audio Context
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Synthesize Sci-Fi Click Sound
+        function playClickSound() {
+            initAudio();
+            if (!audioCtx) return;
+
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(1200, audioCtx.currentTime); // High pitch click
+            osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.05);
+
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.05);
+        }
+
+        // Synthesize Sci-Fi Access Granted Hum
+        function playSuccessSound() {
+            initAudio();
+            if (!audioCtx) return;
+
+            let osc1 = audioCtx.createOscillator();
+            let osc2 = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            osc1.type = 'sawtooth';
+            osc1.frequency.setValueAtTime(150, audioCtx.currentTime);
+            osc1.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.3);
+
+            osc2.type = 'sine';
+            osc2.frequency.setValueAtTime(300, audioCtx.currentTime);
+            osc2.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.3);
+
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+
+            osc1.connect(gain);
+            osc2.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc1.start();
+            osc2.start();
+            osc1.stop(audioCtx.currentTime + 0.4);
+            osc2.stop(audioCtx.currentTime + 0.4);
+        }
+
+        function verifyAccess() {
+            const userInput = document.getElementById("access-pin").value;
+            const errorMsg = document.getElementById("error-msg");
+            
+            if (userInput === SECRET_PIN) {
+                playSuccessSound();
+                document.getElementById("security-gateway").style.display = "none";
+                document.getElementById("portfolio-content").classList.remove("content-hidden");
+            } else {
+                errorMsg.classList.remove("error-hidden");
+                errorMsg.classList.add("error-visible");
+            }
+        }
+
         function switchTab(tabId) {
-            // Hide all tab content
+            playClickSound(); // Trigger synthesized sci-fi click
+
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Deactivate all buttons
-            const buttons = document.querySelectorAll('.nav-btn');
+            const buttons = document.querySelectorAll('.nav-item');
             buttons.forEach(button => button.classList.remove('active'));
 
-            // Show target tab content and activate corresponding button
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
     </script>
-
 </body>
-
 </html>
