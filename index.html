@@ -3,6 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexander Korendowych // Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+
+    <div id="portfolio-content" class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="status-node"></div>
+                <span class="core-title">ALEXANDER K.</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-item active" onclick="switchTab('profile')">
+                    <span class="nav-idx">01</span> About Me
+                </button>
+                <button class="nav-item" onclick="switchTab('skills')">
+                    <span class="nav-idx">02</span> Technical Skills
+                </button>
+                <button class="nav-item" onclick="switchTab('timeline')">
+                    <span class="nav-idx">03</span> Experience Log
+                </button>
+                <button class="nav-item" onclick="switchTab('projects')">
+                    <span class="nav-idx">04</span> Projects
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="status-text">Available for Opportunities</p>
+                <p class="crypto-string">Last Updated: 2026</p>
+            </div>
+        </aside>
+
+        <main class="display-panel">
+            <section id="profile" class="tab-content active">
+                <div class="glass-card animate-glow">
+                    <h2>About Me</h2>
+                    <p class="lead-text">Driven technology professional specializing in low-level software engineering, systems optimization, and automation pipelines.</p>
+                    <p>Possesses a strong foundation in hands-on hardware engineering, operating systems configuration, and custom script development. Experienced in deploying optimized Linux environments (CachyOS/Arch) and managing source code via version control systems like Git. Currently focused on systems programming using C and task automation using Python.</p>
+                </div>
+            </section>
+
+            <section id="skills" class="tab-content">
+                <div class="glass-card">
+                    <h2>Technical Skills</h2>
+                    <div class="matrix-grid">
+                        <div class="matrix-box">
+                            <h3>Programming Languages</h3>
+                            <p>C, Python, JavaScript, Bash Shell Scripting</p>
+                        </div>
+                        <div class="matrix-box">
+                            <h3>Environments & Infrastructure</h3>
+                            <p>Linux CLI, Arch Architecture, CachyOS Kernel optimization, Git Version Control</p>
+                        </div>
+                        <div class="matrix-box">
+                            <h3>Systems Logic</h3>
+                            <p>Hardware diagnostics, system resource allocation, performance optimization, secure credential workflows</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="timeline" class="tab-content">
+                <div class="glass-card">
+                    <h2>Experience Log</h2>
+                    <div class="log-stream">
+                        <div class="log-entry">
+                            <span class="log-timestamp">2023 - 2024</span>
+                            <h4>Systems Exploration & Foundational Scripting</h4>
+                            <p>Analyzed desktop operating systems performance and hardware configurations. Advanced into software engineering principles by developing automation scripts to manage local file environments and system logic flows using Python.</p>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-timestamp">2024 - 2025</span>
+                            <h4>Runtime Optimization & Workflow Analysis</h4>
+                            <p>Studied advanced execution flows and memory usage across runtime environments. Built standalone scripts to automate repetitive system tasks and verified software stability within dedicated test environments.</p>
+                        </div>
+                        <div class="log-entry">
+                            <span class="log-timestamp">2025</span>
+                            <h4>Incident Response & Identity Access Management</h4>
+                            <p>Successfully managed live session mitigation during an unauthorized access event on a critical personal infrastructure node. Evaluated authentication vectors, forced session terminations, and successfully deployed Multi-Factor Authentication (MFA) protocols to harden access controls.</p>
+                        </div>
+                        <div class="log-entry active-log">
+                            <span class="log-timestamp">Present Phase</span>
+                            <h4>Low-Level Systems Programming</h4>
+                            <p>Architecting software solutions tailored for highly optimized Linux distributions (CachyOS). Deepening expertise in compilation flags, memory safety models, and hardware-level interface communication using standard C frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="tab-content">
+                <div class="glass-card">
+                    <h2>Projects Directory</h2>
+                    <div class="project-vault">
+                        <div class="vault-lock">
+                            <p class="placeholder-text">Project repositories, utility libraries, and compiled source code will populate this directory as they are deployed via Git.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let audioCtx = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playClickSound() {
+            initAudio();
+            if (!audioCtx) return;
+
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+
+            // A clean, mechanical, modern "interface tick" instead of a sci-fi laser sound
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(800, audioCtx.currentTime); 
+            osc.frequency.exponentialRampToValueAtTime(500, audioCtx.currentTime + 0.03);
+
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.03);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.03);
+        }
+
+        function switchTab(tabId) {
+            playClickSound(); 
+
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.nav-item');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7d2e9f8a3b1c6d5e4f0a9b8c7d6e5f4a // Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
