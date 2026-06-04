@@ -3,26 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7d2e9f8a3b1c6d5e4f0a9b8c7d6e5f4a</title>
+    <title>7d2e9f8a3b1c6d5e4f0a9b8c7d6e5f4a // Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="security-gateway">
-        <div class="gateway-card">
-            <div class="cyber-scanner"></div>
-            <span class="lock-icon">🔒</span>
-            <h2>SYSTEM LOCKED</h2>
-            <p>Input authorization token to initialize environment.</p>
-            <div class="input-group">
-                <input type="password" id="access-pin" placeholder="ENTER ACCESS CODE" onkeydown="if(event.key === 'Enter') verifyAccess()">
-                <button onclick="verifyAccess()">AUTHENTICATE</button>
-            </div>
-            <p id="error-msg" class="error-hidden">ACCESS DENIED: INVALID TOKEN</p>
-        </div>
-    </div>
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
 
-    <div id="portfolio-content" class="dashboard-container content-hidden">
+    <div id="portfolio-content" class="dashboard-container">
         
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -46,7 +35,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <p>STATUS: AUTHORIZED</p>
+                <p class="status-text">STATUS: ONLINE</p>
                 <p class="crypto-string">SYS_REV: 2026.4</p>
             </div>
         </aside>
@@ -55,7 +44,8 @@
             <section id="profile" class="tab-content active">
                 <div class="glass-card animate-glow">
                     <h2>// PROFESSIONAL PROFILE</h2>
-                    <p>Driven technology enthusiast with a multi-year background in hands-on hardware engineering, systems optimization, and script development. Experienced in configuring optimized Linux environments (CachyOS/Arch), version control via Git, and currently specializing in low-level systems programming in C and automation utilizing Python.</p>
+                    <p class="lead-text">Driven technology enthusiast with a multi-year background in hands-on hardware engineering, systems optimization, and script development.</p>
+                    <p>Experienced in configuring optimized Linux environments (CachyOS/Arch), version control via Git, and currently specializing in low-level systems programming in C and automation utilizing Python.</p>
                 </div>
             </section>
 
@@ -72,7 +62,7 @@
                             <p>Linux CLI, Arch Architecture, CachyOS Kernel, Git</p>
                         </div>
                         <div class="matrix-box">
-                            <h3>SYSTEMS</h3>
+                            <h3>SYSTEMS LOGIC</h3>
                             <p>Hardware Logic, Core Optimization, Storage Layouts</p>
                         </div>
                     </div>
@@ -112,7 +102,7 @@
                     <h2>// REPOSITORY DIRECTORY</h2>
                     <div class="project-vault">
                         <div class="vault-lock">
-                            <p>Active repositories and compiled C binaries will register here upon code deployment.</p>
+                            <p class="placeholder-text">Active repositories and compiled C binaries will register here upon code deployment via Git push streams.</p>
                         </div>
                     </div>
                 </div>
@@ -121,9 +111,6 @@
     </div>
 
     <script>
-        const SECRET_PIN = "AlexTech2026"; 
-
-        // Initialize Web Audio API Audio Context
         let audioCtx = null;
 
         function initAudio() {
@@ -132,7 +119,6 @@
             }
         }
 
-        // Synthesize Sci-Fi Click Sound
         function playClickSound() {
             initAudio();
             if (!audioCtx) return;
@@ -141,65 +127,21 @@
             let gain = audioCtx.createGain();
 
             osc.type = 'sine';
-            osc.frequency.setValueAtTime(1200, audioCtx.currentTime); // High pitch click
-            osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.05);
+            osc.frequency.setValueAtTime(1000, audioCtx.currentTime); 
+            osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.04);
 
-            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
 
             osc.connect(gain);
             gain.connect(audioCtx.destination);
 
             osc.start();
-            osc.stop(audioCtx.currentTime + 0.05);
-        }
-
-        // Synthesize Sci-Fi Access Granted Hum
-        function playSuccessSound() {
-            initAudio();
-            if (!audioCtx) return;
-
-            let osc1 = audioCtx.createOscillator();
-            let osc2 = audioCtx.createOscillator();
-            let gain = audioCtx.createGain();
-
-            osc1.type = 'sawtooth';
-            osc1.frequency.setValueAtTime(150, audioCtx.currentTime);
-            osc1.frequency.exponentialRampToValueAtTime(600, audioCtx.currentTime + 0.3);
-
-            osc2.type = 'sine';
-            osc2.frequency.setValueAtTime(300, audioCtx.currentTime);
-            osc2.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.3);
-
-            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
-
-            osc1.connect(gain);
-            osc2.connect(gain);
-            gain.connect(audioCtx.destination);
-
-            osc1.start();
-            osc2.start();
-            osc1.stop(audioCtx.currentTime + 0.4);
-            osc2.stop(audioCtx.currentTime + 0.4);
-        }
-
-        function verifyAccess() {
-            const userInput = document.getElementById("access-pin").value;
-            const errorMsg = document.getElementById("error-msg");
-            
-            if (userInput === SECRET_PIN) {
-                playSuccessSound();
-                document.getElementById("security-gateway").style.display = "none";
-                document.getElementById("portfolio-content").classList.remove("content-hidden");
-            } else {
-                errorMsg.classList.remove("error-hidden");
-                errorMsg.classList.add("error-visible");
-            }
+            osc.stop(audioCtx.currentTime + 0.04);
         }
 
         function switchTab(tabId) {
-            playClickSound(); // Trigger synthesized sci-fi click
+            playClickSound(); 
 
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
